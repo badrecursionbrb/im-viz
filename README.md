@@ -3,6 +3,8 @@ Processmining web application for displaying internal steps of the Inductive Min
 
 The tool is publicly accessible here: https://im-viz.informatik.uni-mannheim.de
 
+The corresponding video is provided in this git repository and can be accessed using this link: https://raw.githubusercontent.com/badrecursionbrb/im-viz/main/imdemo.mp4
+
 # README
 
 # TODO CHECK FOR PRODUCTION
