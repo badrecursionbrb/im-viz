@@ -1,0 +1,43 @@
+{"algorithm_data": {
+    "name": "im_infrequent",
+    "explanations": {
+        "->": "A sequence cut is found because there is a one-way path between one set and the other",
+        "X": "An exclusive cut is found because there are no edges between one set and another",
+        "+": "A parellel cut is found because any two nodes from different disjoint sets are connected bidirectionally",
+        "*": "A loop cut is found because any edge between 2 disjoint sets either leaves an end node of one set or reaches a start node of the other​ ",
+        "FILTER": "Filter denotes a filtering step according to the set threshold. The log is filtered and the miner algorithm is run on the filtered log.",
+        "TAU": "Tau-A silent activity",
+        "BC": "A base case is found when the event log contains only traces with a single activity or the log contains no traces",
+        "FT": "A fall through is found because no base case applies (if the log contains multiple activities) and no cut applies. Please take a look at the trace table"
+    },
+    "algorithm_lines":[
+        {"tabs": 0, "no":0, "text": "function Inductive Miner Framework(log)"},
+        {"tabs": 1, "no":1, "text": "\t Detect the existence of base cases in Log "},
+        {"tabs": 1, "no":2, "text": "\t if bc are found"},
+        {"tabs": 2, "no":3, "text": "\t\t return base cases"},
+        {"tabs": 1, "no":4, "text": "\t end if"},
+        {"tabs": 1, "no":5, "text": "\tSearch for a cut in Log"},
+        {"tabs": 1, "no":6, "text": "\tif cut is found"},
+        {"tabs": 2, "no":7, "text": "\t\tthen split Log according to the cut"},
+        {"tabs": 2, "no":8, "text": "\t\trecall the function for each sublog"},
+        {"tabs": 1, "no":9, "text": "\telse"},
+        {"tabs": 2, "no":10, "text": "\t\tfilter log according to threshold"},
+        {"tabs": 2, "no":11, "text": "\t\trun miner again on filtered log"},
+        {"tabs": 2, "no":12, "text": "\t\tif no result after second iteration"},
+        {"tabs": 3, "no":13, "text": "\t\t\treturn a fall through for log L"},
+        {"tabs": 2, "no":14, "text": "\tend if"},
+        {"tabs": 1, "no":15, "text": "\tend if"},
+        {"tabs": 0, "no":16, "text": "end function"}
+      ],
+    "hightlighting_map": {
+        "CUT":  [5, 6, 7, 8],
+        "TAU": [1, 2, 3],
+        "BC": [1, 2, 3],
+        "FT": [12, 13],
+        "FILTER": [10, 11]
+    }
+
+}
+
+
+}
