@@ -31,10 +31,13 @@ npm --version
 Node --version
 ```
 
-3. check-out (clone) this project to the folder of your choice 
+3. Install graphviz executables 
+    According to the OS you are using follow the steps listed on the following page: https://stackoverflow.com/questions/35064304/runtimeerror-make-sure-the-graphviz-executables-are-on-your-systems-path-aft
 
-4. Have Python version 3.9+ installed (3.8+ may also be fine)
-5. In the venv folder in 
+4. check-out (clone) this project to the folder of your choice 
+
+5. Have Python version 3.9+ installed (3.8+ may also be fine)
+6. In the venv folder in 
 ```
 im-viz/pythonproject/venv/Script/
 ```
@@ -51,7 +54,7 @@ When navigated into the folder of the python.exe:
 .\python.exe ..\..\setup.py install
 ```
 
-6. Clone the contained project (pm4py fork) with the venv:
+6. Clone the contained project (pm4py fork) with the venv (if the previous step could not install it using the setup.py):
 ```
 pip install -e git+https://github.com/badrecursionbrb/pm4py-core.git#egg=pm4py
 ```
