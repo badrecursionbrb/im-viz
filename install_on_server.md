@@ -97,7 +97,7 @@ create folder:
 `sudo mkdir -p /var/www/imviz-app/public_html`
 
 then copy the files from the *dist* directory to the apache public_html folder designated for it: 
-`~/projectprocessmining/im-app/dist`
+`~/im-viz/im-app/dist`
 to 
 `/var/www/imviz-app/public_html`
 
@@ -192,9 +192,9 @@ install python version 10: `sudo apt-get install python3.10`
 Export path to current shell: 
 `export PATH="/usr/local/opt/graphviz/bin:$PATH" `
 
-navigate to `projectprocessmining/pythonproject/venv_linux/bin` and execute the *activate* file
+navigate to `im-viz/pythonproject/venv_linux/bin` and execute the *activate* file
 
-run the *setup.py* file in the folder `projectprocessmining/pythonproject/setup.py`
+run the *setup.py* file in the folder `im-viz/pythonproject/setup.py`
 
 install the pm4py modified project (if failed with setup.py):
 `pip install -e git+https://github.com/badrecursionbrb/pm4py-core.git#egg=pm4py`
@@ -220,12 +220,12 @@ After=network.target
 [Service]
 User=YOURUSER
 Group=www-data
-WorkingDirectory=/home/YOURUSER/projectprocessmining/pythonproject
-Environment="PATH=/home/YOURUSER/projectprocessmining/pythonproject/venv_linux/bin"
+WorkingDirectory=/home/YOURUSER/im-viz/pythonproject
+Environment="PATH=/home/YOURUSER/im-viz/pythonproject/venv_linux/bin"
 access_log_format ="%(h)s %(l)s %(u)s %(t)s %(r)s %(s)s %(b)s %(f)s %(a)s"
 
-#ExecStart=/home/YOURUSER/projectprocessmining/pythonproject/venv_linux/bin/gunicorn --workers 5 --bind 127.0.0.1:8080 --log-config log.conf -m 007 gunicorn_app:flask_app
-ExecStart=/home/YOURUSER/projectprocessmining/pythonproject/venv_linux/bin/gunicorn --workers 5 --bind 0.0.0.0:8080 --log-config log.conf -m 007 gunicorn_app:flask_app
+#ExecStart=/home/YOURUSER/im-viz/pythonproject/venv_linux/bin/gunicorn --workers 5 --bind 127.0.0.1:8080 --log-config log.conf -m 007 gunicorn_app:flask_app
+ExecStart=/home/YOURUSER/im-viz/pythonproject/venv_linux/bin/gunicorn --workers 5 --bind 0.0.0.0:8080 --log-config log.conf -m 007 gunicorn_app:flask_app
 
 
 [Install]

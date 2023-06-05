@@ -34,7 +34,7 @@ Node --version
 4. Have Python version 3.9+ installed (3.8+ may also be fine)
 5. In the venv folder in 
 ```
-projectprocessmining/pythonproject/venv/Script/
+im-viz/pythonproject/venv/Script/
 ```
 execute the **activate** file to activate the virtual environment (venv)
 select the venv python executable in ...../venv/Scripts/ and execute the setup.py like in the following line: 
@@ -58,7 +58,7 @@ pip install -e git+https://github.com/badrecursionbrb/pm4py-core.git#egg=pm4py
 ## Now back to the front-end: 
 8. Open another terminal instance, as the old one is now running the back-end (can already be tested using Postman)
 9. navigate to 
-*projectprocessmining/im-app/*
+*im-viz/im-app/*
 
 10. then, to install the node modules, execute:
 ```
