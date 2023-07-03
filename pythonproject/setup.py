@@ -17,5 +17,5 @@ setup(
         'requests',
         'pm4py @ git+https://github.com/badrecursionbrb/pm4py-core.git#egg=pm4py'
     ],
-    packages=['IMviz']
+
 )
