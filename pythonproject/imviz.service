@@ -7,7 +7,8 @@ User=testuser
 Group=www-data
 WorkingDirectory=/home/testuser/myproject
 Environment="PATH=/home/testuser/myproject/myprojectenv/bin"
-ExecStart=/home/testuser/myproject/myprojectenv/bin/gunicorn --workers 3 --bind unix:myproject.sock -m 007 gunicorn_app:app
+ExecStart=/home/testuser/myproject/myprojectenv/bin/gunicorn  --workers 5 --bind 0.0.0.0:8080 -m 007 gunicorn_app:flask_app
+#ExecStart=/home/testuser/myproject/myprojectenv/bin/gunicorn  --workers 5 --bind 0.0.0.0:8080 --log-config log.conf -m 007 gunicorn_app:flask_app
 
 [Install]
 WantedBy=multi-user.target

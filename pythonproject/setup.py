@@ -16,6 +16,6 @@ setup(
         'gunicorn>=20.1.0',
         'requests',
         'pm4py @ git+https://github.com/badrecursionbrb/pm4py-core.git#egg=pm4py'
-    ],
-    packages=['IMviz']
+    ]
+
 )

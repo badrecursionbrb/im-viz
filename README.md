@@ -1,7 +1,9 @@
 # IM-Viz Web-app
 Processmining web application for displaying internal steps of the Inductive Miner
 
-The tool is publicly accessible here: https://im-viz.informatik.uni-mannheim.de
+<b>The tool is publicly accessible here: https://im-viz.informatik.uni-mannheim.de</b>
+
+Note: the tool works seamlessly in both Chrome and Firefox, whereas in Safari we occasionally experience issues when displaying the DFG
 
 The corresponding video is provided in this git repository and can be accessed using this link: https://raw.githubusercontent.com/badrecursionbrb/im-viz/main/imdemo.mp4
 
