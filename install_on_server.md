@@ -104,6 +104,13 @@ to
 
 (optional) modify the access to the app within the apache configuration apache2.conf in `/etc/apache2/`:
 *For example:* 
+
+<Directory /var/www/imviz-app/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
 <Directory /www/imviz-app/public_html>
     Require host example.com
     Require ip 192.168.0.1
@@ -143,6 +150,12 @@ change it to:
     ServerAlias www.SERVERALIAS.XYZ
     DocumentRoot /var/www/imviz-app/public_html
     DocumentRoot /var/www/html
+
+
+    RewriteEngine on
+RewriteCond %{SERVER_NAME} =YOURURLGOESHERE/ [OR]
+RewriteCond %{SERVER_NAME} =YOURURLGOESHERE
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 </VirtualHost>
 `
 
@@ -303,7 +316,7 @@ then run:
 
 test if the back-end is working appropriately with the following curl command: 
 ```
- curl -H "Content-Type: application/json" --request POST --data '{"logstring": "<a,b,c,e,f>10;<a,d,b,c,d,e,f>10;<a,d,c,e,c,e,f>10;<a,d,e,c,d,e,f>10;<a,d,c,d,e,f>10;"}' localhost:8000/get_visualization_data_logstring?algorithm="im_standard"
+ curl -H "Content-Type: application/json" --request POST --data '{"logstring": "<a,b,c,e,f>10;<a,d,b,c,d,e,f>10;<a,d,c,e,c,e,f>10;<a,d,e,c,d,e,f>10;<a,d,c,d,e,f>10;"}' localhost:8080/get_visualization_data_logstring?algorithm="im_standard"
 
 ```
 
