@@ -159,6 +159,15 @@ RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 </VirtualHost>
 `
 
+If that does not work a `.htaccess` file in the `public_html` may help with the following content:
+`
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ /index.html
+`
+
 enable the virtual file with:
 `sudo a2ensite imviz-app.conf`
 
